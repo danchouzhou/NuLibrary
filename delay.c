@@ -5,6 +5,9 @@ void delay(uint32_t u32msDelay)
 {
     uint32_t saveLoad, saveVal, saveCtrl;
 
+    if(u32msDelay == 0)
+        return;
+
     /* Store SysTick settings */
     saveLoad = SysTick->LOAD; 
     saveVal = SysTick->VAL;
@@ -44,6 +47,9 @@ void delay(uint32_t u32msDelay)
 void delayMicroseconds(uint32_t u32usDelay)
 {
     uint32_t saveLoad, saveVal, saveCtrl;
+
+    if(u32usDelay == 0)
+        return;
 
     /* Store SysTick settings */
     saveLoad = SysTick->LOAD; 
